@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Dice Roller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>D&D Dice Roller</h1>
+    <p>Select a die to roll:</p>
+    <div id="dice-buttons">
+        <button onclick="rollDice(4)">d4</button>
+        <button onclick="rollDice(6)">d6</button>
+        <button onclick="rollDice(8)">d8</button>
+        <button onclick="rollDice(10)">d10</button>
+        <button onclick="rollDice(12)">d12</button>
+        <button onclick="rollDice(20)">d20</button>
+        <button onclick="rollDice(100)">d100</button>
+    </div>
+    <div id="result">Roll a die to see the result!</div>
+
+    <script>
+        function rollDice(sides) {
+            const result = Math.floor(Math.random() * sides) + 1;
+            document.getElementById('result').textContent = `You rolled a d${sides}: And you got a ${result}`;
+        }
+    </script>
+</body>
+</html>
